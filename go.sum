@@ -1,0 +1,5 @@
+github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
+github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
+github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/nasa9084/go-switchbot v1.0.0 h1:rBoMJvd0kgReKX7ODJ3Ri2wujslQEdI4yqqUSzFPAag=
+github.com/nasa9084/go-switchbot v1.0.0/go.mod h1:9bPyOoTj1Ez9Zd9fQ9IRVgCFcMVyVXzgqo6h1iYvCl0=

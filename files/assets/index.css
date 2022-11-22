@@ -1,0 +1,51 @@
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.device {
+  width: 50%;
+  padding: 1em;
+  border-bottom: 2px solid #eee;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.device label {
+  display: block;
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+}
+
+.device button {
+  margin: 0.2em;
+  padding: 0.5em 1em;
+  background: none;
+  border: 2px solid #ccc;
+  border-radius: 0.5em;
+  flex-grow: 1;
+  color: #666;
+  cursor: pointer;
+}
+
+.device button:active {
+  transform: translateY(2px);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+}
