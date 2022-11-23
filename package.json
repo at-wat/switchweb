@@ -1,0 +1,14 @@
+{
+  "name": "switchweb",
+  "repository": "https://github.com/at-wat/switchweb",
+  "license": "Apache-2.0",
+  "scripts": {
+    "fmt": "prettier --write \"./files/**/*.{js,css,html}\"",
+    "check-fmt": "prettier --check \"./files/**/*.{js,css,html}\"",
+    "lint": "eslint \"./files/**/*.js\""
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "prettier": "^2.8.0"
+  }
+}

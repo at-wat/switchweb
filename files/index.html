@@ -2,9 +2,15 @@
   <head>
     <title>SwitchWeb</title>
     <link rel="stylesheet" href="assets/index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <header>
@@ -21,8 +27,7 @@
         <button data-id="{{$act.ID}}" class="action">
           {{if $act.Icon}}
           <i class="fa-solid fa-{{$act.Icon}}"></i>
-          {{end}}
-          {{$act.Name}}
+          {{end}} {{$act.Name}}
         </button>
         {{end}}
       </div>
@@ -33,20 +38,19 @@
         <i class="fa-solid fa-lock" id="locked"></i>
         <i class="fa-solid fa-lock-open" id="unlocked"></i>
       </button>
-      <button id="hide" class="editor">
-        hide
-      </button>
+      <button id="hide" class="editor">hide</button>
       <select id="restore" class="editor">
-        <option>
-          -- restore --
-        </option>
+        <option>-- restore --</option>
         {{range $_, $dev := .Devs}}
-        <option data-id="{{$dev.ID}}">
-          {{$dev.Name}}
-        </option>
+        <option data-id="{{$dev.ID}}">{{$dev.Name}}</option>
         {{end}}
       </select>
-      <a href="https://github.com/at-wat/switchweb" target="_blank" ref="noreferrer noopener"><i class="fa-brands fa-github"></i></a>
+      <a
+        href="https://github.com/at-wat/switchweb"
+        target="_blank"
+        ref="noreferrer noopener"
+        ><i class="fa-brands fa-github"></i
+      ></a>
     </footer>
   </body>
   <script src="assets/index.js"></script>

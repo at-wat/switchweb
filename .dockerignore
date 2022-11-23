@@ -1,2 +1,5 @@
 .git
 Makefile
+node_modules
+package.json
+yarn.lock
