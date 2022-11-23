@@ -71,10 +71,23 @@ footer {
   background-color: #eee;
   display: flex;
   justify-content: center;
-  padding: 0.1em;
+  padding: 0.25em;
+  align-items: center;
 }
 
 footer select {
+  display: block;
   color: #666;
   border: none;
+}
+
+footer a {
+  display: block;
+  margin: 0 0.5em;
+  text-decoration: none;
+  color: #666;
+}
+
+footer a:hover {
+  color: #777;
 }
