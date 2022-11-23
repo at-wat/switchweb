@@ -16,9 +16,9 @@ FROM scratch
 COPY --from=builder /go/src/github.com/at-wat/switchweb/switchweb /
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
-ENV SWITCHBOT_TOKEN \
-  SWITCHBOT_CLIENT_SECRET \
-  ADDR
+ENV SWITCHBOT_TOKEN= \
+  SWITCHBOT_CLIENT_SECRET= \
+  ADDR=
 
 EXPOSE 8080
 
