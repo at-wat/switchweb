@@ -16,7 +16,10 @@ body {
   flex-grow: 1;
 }
 
-.device:not([style*='display: none']):last-of-type {
+.deviceEnd {
+  width: 380px;
+  box-sizing: border-box;
+  flex-grow: 1;
   margin-bottom: 2em;
 }
 
@@ -35,6 +38,7 @@ body {
 }
 
 .device button {
+  font-size: 0.9rem;
   margin: 0.2em;
   padding: 0.5em 1em;
   background: none;
@@ -43,6 +47,11 @@ body {
   flex-grow: 1;
   color: #666;
   cursor: pointer;
+}
+
+.device button:hover {
+  color: #999;
+  border-color: #ddd;
 }
 
 .device button:active {
