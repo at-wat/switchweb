@@ -27,10 +27,14 @@
     </div>
     {{end}}
     <footer>
-      <button id="hide">
+      <button id="lock">
+        <i class="fa-solid fa-lock" id="locked"></i>
+        <i class="fa-solid fa-lock-open" id="unlocked"></i>
+      </button>
+      <button id="hide" class="editor">
         hide
       </button>
-      <select id="restore">
+      <select id="restore" class="editor">
         <option>
           -- restore --
         </option>

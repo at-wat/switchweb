@@ -110,3 +110,26 @@ document.getElementById('hide').addEventListener('click', () => {
   hiding = true
   document.getElementById('hide').style.backgroundColor = '#ccc'
 })
+
+const displayEditor = (val) => {
+  Array.from(document.getElementsByClassName('editor')).forEach((e) => {
+    e.style.display = val
+  })
+}
+
+let locked = false
+const lock = () => {
+  if (locked) {
+    locked = false
+    displayEditor(null)
+    document.getElementById('unlocked').style.display = null
+    document.getElementById('locked').style.display = 'none'
+  } else {
+    locked = true
+    displayEditor('none')
+    document.getElementById('unlocked').style.display = 'none'
+    document.getElementById('locked').style.display = null
+  }
+}
+lock()
+document.getElementById('lock').addEventListener('click', lock)
