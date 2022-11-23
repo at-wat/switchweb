@@ -43,6 +43,7 @@ func newServer(cli *client) *server {
 	mux.HandleFunc("/", s.index)
 	mux.HandleFunc("/act/", s.act)
 	mux.Handle("/assets/", http.FileServer(http.FS(f)))
+	mux.Handle("/favicon.svg", http.FileServer(http.FS(f)))
 
 	s.hs = &http.Server{
 		Addr:           ":8080",
