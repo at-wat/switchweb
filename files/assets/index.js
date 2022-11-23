@@ -1,3 +1,5 @@
+"use strict"
+
 const prefix = 'switchweb'
 
 const onError = async (msg) => {
@@ -83,9 +85,9 @@ document.getElementById('restore').addEventListener('click', (ev) => {
     return
   }
   localStorage.removeItem(`${prefix}/device/${id}/hide`)
-  Array.from(document.getElementsByClassName('device')).
-    filter((e) => e.dataset.id == id).
-    forEach((e) => {
+  Array.from(document.getElementsByClassName('device'))
+    .filter((e) => e.dataset.id == id)
+    .forEach((e) => {
       e.style.display = null
       Array.from(e.getElementsByClassName('action')).forEach((e) => {
         const id = e.dataset.id
