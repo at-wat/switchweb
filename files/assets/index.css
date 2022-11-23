@@ -3,19 +3,28 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0 40px;
+  gap: 0 20px;
 }
 
 .device {
-  width: 50%;
+  width: 380px;
   padding: 1em;
   border-bottom: 2px solid #eee;
   box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.device:not([style*='display: none']):last-of-type {
+  margin-bottom: 2em;
 }
 
 .actions {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 0.5em;
 }
 
 .device label {
@@ -30,7 +39,7 @@ body {
   padding: 0.5em 1em;
   background: none;
   border: 2px solid #ccc;
-  border-radius: 0.5em;
+  border-radius: 1em;
   flex-grow: 1;
   color: #666;
   cursor: pointer;
@@ -71,24 +80,24 @@ footer {
   height: 1.2em;
   background-color: #eee;
   display: flex;
-  justify-content: center;
   padding: 0.25em;
+  justify-content: center;
   align-items: center;
 }
 
-footer select,button {
+footer select, footer button {
   display: block;
   color: #666;
   border: none;
 }
 
-footer a,button {
+footer a, footer button {
   display: block;
   margin: 0 0.5em;
   text-decoration: none;
   color: #666;
 }
 
-footer a:hover,button:hover {
+footer a:hover, footer button:hover {
   color: #777;
 }
