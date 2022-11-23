@@ -5,6 +5,12 @@ const onError = async (msg) => {
   document.getElementById('alertMsg').innerHTML = msg
 }
 
+let hiding = false
+const endHide = () => {
+  hiding = false
+  document.getElementById('hide').style.backgroundColor = null
+}
+
 const onAct = async (ev) => {
   if (!ev.currentTarget) {
     return
@@ -12,7 +18,8 @@ const onAct = async (ev) => {
   const target = ev.currentTarget
   const id = target.dataset.id
 
-  if (ev.altKey) {
+  if (ev.altKey || hiding) {
+    endHide()
     target.style.display = 'none'
     localStorage.setItem(`${prefix}/button/${id}/hide`, true)
     ev.stopPropagation()
@@ -41,7 +48,8 @@ const onDevice = async (ev) => {
   }
   const id = ev.currentTarget.dataset.id
 
-  if (ev.altKey) {
+  if (ev.altKey || hiding) {
+    endHide()
     ev.currentTarget.style.display = 'none'
     localStorage.setItem(`${prefix}/device/${id}/hide`, true)
     return
@@ -93,3 +101,12 @@ const closeAlert = () => {
 }
 document.getElementById('alert').addEventListener('click', closeAlert)
 closeAlert()
+
+document.getElementById('hide').addEventListener('click', () => {
+  if (hiding) {
+    endHide()
+    return
+  }
+  hiding = true
+  document.getElementById('hide').style.backgroundColor = '#ccc'
+})

@@ -75,19 +75,19 @@ footer {
   align-items: center;
 }
 
-footer select {
+footer select,button {
   display: block;
   color: #666;
   border: none;
 }
 
-footer a {
+footer a,button {
   display: block;
   margin: 0 0.5em;
   text-decoration: none;
   color: #666;
 }
 
-footer a:hover {
+footer a:hover,button:hover {
   color: #777;
 }
