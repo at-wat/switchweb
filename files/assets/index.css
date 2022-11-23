@@ -40,6 +40,29 @@ body {
   transform: translateY(2px);
 }
 
+header {
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+#alert {
+  width: 100%;
+  cursor: pointer;
+  padding: 0.5em 1em 0.7em 1em;
+  color: #f66;
+  border-radius: 0 0 0.5em 0.5em;
+  border-color: #f66;
+  border-style: solid;
+  border-width: 0 3px 3px 3px;
+  box-sizing: border-box;
+}
+
+#alertMsg {
+  display: inline-block;
+  padding-left: 0.5em;
+  font-weight: bold;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -48,4 +71,10 @@ footer {
   background-color: #eee;
   display: flex;
   justify-content: center;
+  padding: 0.1em;
+}
+
+footer select {
+  color: #666;
+  border: none;
 }

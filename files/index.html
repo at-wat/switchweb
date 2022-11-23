@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <header>
+      <div id="alert">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <span id="alertMsg"></span>
+      </div>
+    </header>
     {{range $_, $dev := .Devs}}
     <div class="device" data-id="{{$dev.ID}}">
       <label>{{$dev.Name}}</label>
