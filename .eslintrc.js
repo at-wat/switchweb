@@ -3,9 +3,9 @@ module.exports = {
     browser: true,
   },
   extends: [
-    'eslint:recommended'
+    'eslint:recommended',
   ],
   parserOptions: {
-    ecmaVersion: 12
-  }
+    ecmaVersion: 12,
+  },
 }
