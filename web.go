@@ -47,7 +47,7 @@ func newServer(cli *client) *server {
 	mux.Handle("/favicon.svg", http.FileServer(http.FS(f)))
 
 	addr, ok := os.LookupEnv("ADDR")
-	if !ok {
+	if !ok || addr == "" {
 		addr = ":8080"
 	}
 
