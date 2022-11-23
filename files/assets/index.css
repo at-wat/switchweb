@@ -68,6 +68,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 1.2em;
   background-color: #eee;
   display: flex;
   justify-content: center;
