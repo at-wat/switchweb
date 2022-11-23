@@ -18,7 +18,7 @@ const onAct = async (ev) => {
   const target = ev.currentTarget
   const id = target.dataset.id
 
-  if (ev.altKey || hiding) {
+  if (hiding) {
     endHide()
     target.style.display = 'none'
     localStorage.setItem(`${prefix}/button/${id}/hide`, true)
@@ -48,7 +48,7 @@ const onDevice = async (ev) => {
   }
   const id = ev.currentTarget.dataset.id
 
-  if (ev.altKey || hiding) {
+  if (hiding) {
     endHide()
     ev.currentTarget.style.display = 'none'
     localStorage.setItem(`${prefix}/device/${id}/hide`, true)
