@@ -45,8 +45,13 @@ func newServer(cli *client) *server {
 	mux.Handle("/assets/", http.FileServer(http.FS(f)))
 	mux.Handle("/favicon.svg", http.FileServer(http.FS(f)))
 
+	addr, ok := os.LookupEnv("ADDR")
+	if !ok {
+		addr = ":8080"
+	}
+
 	s.hs = &http.Server{
-		Addr:           ":8080",
+		Addr:           addr,
 		Handler:        mux,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,
