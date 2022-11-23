@@ -1,5 +1,10 @@
 const prefix = 'switchweb'
 
+const onError = async (msg) => {
+  document.getElementById('alert').style.display = null
+  document.getElementById('alertMsg').innerHTML = msg
+}
+
 const onAct = async (ev) => {
   if (!ev.currentTarget) {
     return
@@ -22,10 +27,10 @@ const onAct = async (ev) => {
     })
     if (!res.ok) {
       const body = await res.text()
-      alert(`fail: ${body}`)
+      onError(`fail: ${body}`)
     }
   } catch (err) {
-    alert(`error: ${err}`)
+    onError(`error: ${err}`)
   }
   target.style.backgroundColor = null
 }
@@ -81,3 +86,10 @@ document.getElementById('restore').addEventListener('click', (ev) => {
       })
     })
 })
+
+const closeAlert = () => {
+  document.getElementById('alert').style.display = 'none'
+  document.getElementById('alertMsg').innerHTML = null
+}
+document.getElementById('alert').addEventListener('click', closeAlert)
+closeAlert()
