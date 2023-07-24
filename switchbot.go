@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/nasa9084/go-switchbot"
+	"github.com/nasa9084/go-switchbot/v3"
 )
 
 type client struct {
