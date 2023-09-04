@@ -13,6 +13,6 @@ type Device struct {
 type Action struct {
 	Name string
 	Icon string
-	ID   int
+	ID   string
 	Act  func(ctx context.Context) error
 }
