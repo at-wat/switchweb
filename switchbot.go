@@ -43,6 +43,7 @@ func (c *client) list(ctx context.Context) []Device {
 			acts = []Action{
 				{
 					Name: "ON",
+					ID:   d.ID + ".on",
 					Icon: "plug",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.TurnOnCommand())
@@ -50,6 +51,7 @@ func (c *client) list(ctx context.Context) []Device {
 				},
 				{
 					Name: "OFF",
+					ID:   d.ID + ".off",
 					Icon: "power-off",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.TurnOffCommand())
@@ -60,6 +62,7 @@ func (c *client) list(ctx context.Context) []Device {
 			acts = []Action{
 				{
 					Name: "Open",
+					ID:   d.ID + ".open",
 					Icon: "door-open",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.TurnOnCommand())
@@ -67,6 +70,7 @@ func (c *client) list(ctx context.Context) []Device {
 				},
 				{
 					Name: "Close",
+					ID:   d.ID + ".close",
 					Icon: "door-closed",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.TurnOffCommand())
@@ -93,12 +97,14 @@ func (c *client) list(ctx context.Context) []Device {
 			acts = []Action{
 				{
 					Icon: "plug",
+					ID:   d.ID + ".on",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.TurnOnCommand())
 					},
 				},
 				{
 					Name: "1",
+					ID:   d.ID + ".1",
 					Icon: "fan",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.FanLowSpeedCommand())
@@ -106,6 +112,7 @@ func (c *client) list(ctx context.Context) []Device {
 				},
 				{
 					Name: "2",
+					ID:   d.ID + ".2",
 					Icon: "fan",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.FanMiddleSpeedCommand())
@@ -113,6 +120,7 @@ func (c *client) list(ctx context.Context) []Device {
 				},
 				{
 					Name: "3",
+					ID:   d.ID + ".3",
 					Icon: "fan",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.FanHighSpeedCommand())
@@ -120,12 +128,14 @@ func (c *client) list(ctx context.Context) []Device {
 				},
 				{
 					Icon: "power-off",
+					ID:   d.ID + ".off",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.TurnOffCommand())
 					},
 				},
 				{
 					Icon: "left-right",
+					ID:   d.ID + ".lr",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, switchbot.FanSwingCommand())
 					},
@@ -135,6 +145,7 @@ func (c *client) list(ctx context.Context) []Device {
 			acts = []Action{
 				{
 					Icon: "arrow-right-to-bracket",
+					ID:   d.ID + ".input",
 					Name: "Input",
 					Act: func(ctx context.Context) error {
 						return c.cli.Device().Command(ctx, d.ID, &switchbot.DeviceCommandRequest{

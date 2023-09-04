@@ -10,7 +10,6 @@ import (
 	"net/http"
 	"os"
 	"path"
-	"strconv"
 	"sync"
 	"time"
 )
@@ -24,7 +23,7 @@ type server struct {
 
 	tplIndex *template.Template
 
-	acts map[int]func(context.Context) error
+	acts map[string]func(context.Context) error
 	devs []Device
 	mu   sync.Mutex
 }
@@ -75,13 +74,11 @@ func (s *server) updateDevices(ctx context.Context) {
 
 	devs := s.cli.list(ctx)
 
-	id := 1
-	acts := make(map[int]func(context.Context) error)
+	acts := make(map[string]func(context.Context) error)
 	for i := range devs {
 		for j := range devs[i].Actions {
-			devs[i].Actions[j].ID = id
+			id := devs[i].Actions[j].ID
 			acts[id] = devs[i].Actions[j].Act
-			id++
 		}
 	}
 
@@ -111,12 +108,7 @@ func (s *server) act(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(msg))
 	}
 
-	id, err := strconv.Atoi(path.Base(r.URL.Path))
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		output("error on parsing action ID: %v", err)
-		return
-	}
+	id := path.Base(r.URL.Path)
 
 	s.mu.Lock()
 	defer s.mu.Unlock()
