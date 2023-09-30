@@ -6,8 +6,8 @@
 
 var                       | description
 ------------------------- | -----------
-`SWITCHBOT_TOKEN`         | Open Token for SwitchBot API. See [this](https://github.com/OpenWonderLabs/SwitchBotAPI/blob/main/README.md#getting-started)
-`SWITCHBOT_CLIENT_SECRET` | Open Token for SwitchBot API. See [this](https://github.com/OpenWonderLabs/SwitchBotAPI/blob/main/README.md#getting-started)
+`SWITCHBOT_TOKEN`         | Open Token for SwitchBot API ([ref](https://github.com/OpenWonderLabs/SwitchBotAPI/blob/main/README.md#getting-started))
+`SWITCHBOT_CLIENT_SECRET` | Open Token for SwitchBot API ([ref](https://github.com/OpenWonderLabs/SwitchBotAPI/blob/main/README.md#getting-started))
 `ADDR`                    | Address and port to listen (Default: ':8080')
 `CUSTOM_DEVICES`          | Definition of custom buttons
 
@@ -35,4 +35,4 @@ key                  | value
 -------------------- | -----
 `.[].id`             | Device ID
 `.[].buttons[].name` | Registerd button name
-`.[].buttons[].icon` | Fontawesome icon name
+`.[].buttons[].icon` | Fontawesome icon name ([find icons](https://fontawesome.com/search))
