@@ -157,6 +157,23 @@ func (c *client) list(ctx context.Context) []Device {
 				},
 			}
 		}
+		if dev, ok := customDevices[d.ID]; ok {
+			for _, b := range dev.Buttons {
+				b := b
+				acts = append(acts, Action{
+					Icon: b.Icon,
+					ID:   dev.ID + "." + b.Name,
+					Name: b.Name,
+					Act: func(ctx context.Context) error {
+						return c.cli.Device().Command(ctx, dev.ID, &switchbot.DeviceCommandRequest{
+							Command:     b.Name,
+							Parameter:   "default",
+							CommandType: "customize",
+						})
+					},
+				})
+			}
+		}
 		if len(acts) == 0 {
 			continue
 		}
