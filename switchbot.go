@@ -23,7 +23,7 @@ func newClient() *client {
 	}
 
 	return &client{
-		cli: switchbot.New(token, secret),
+		cli: switchbot.New(token, secret, switchbot.WithEndpoint("https://api.switchbot.net")),
 	}
 }
 
