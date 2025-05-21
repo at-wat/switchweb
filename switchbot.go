@@ -144,18 +144,6 @@ func (c *client) list(ctx context.Context) []Device {
 		case switchbot.TV, "DIY TV":
 			acts = []Action{
 				{
-					Icon: "arrow-right-to-bracket",
-					ID:   d.ID + ".input",
-					Name: "Input",
-					Act: func(ctx context.Context) error {
-						return c.cli.Device().Command(ctx, d.ID, &switchbot.DeviceCommandRequest{
-							Command:     "input",
-							Parameter:   "default",
-							CommandType: "command",
-						})
-					},
-				},
-				{
 					Icon: "angle-up",
 					ID:   d.ID + ".channelAdd",
 					Name: "Ch+",
