@@ -155,6 +155,54 @@ func (c *client) list(ctx context.Context) []Device {
 						})
 					},
 				},
+				{
+					Icon: "angle-up",
+					ID:   d.ID + ".channelAdd",
+					Name: "Ch+",
+					Act: func(ctx context.Context) error {
+						return c.cli.Device().Command(ctx, d.ID, &switchbot.DeviceCommandRequest{
+							Command:     "channelAdd",
+							Parameter:   "default",
+							CommandType: "command",
+						})
+					},
+				},
+				{
+					Icon: "angle-down",
+					ID:   d.ID + ".channelSub",
+					Name: "Ch-",
+					Act: func(ctx context.Context) error {
+						return c.cli.Device().Command(ctx, d.ID, &switchbot.DeviceCommandRequest{
+							Command:     "channelSub",
+							Parameter:   "default",
+							CommandType: "command",
+						})
+					},
+				},
+				{
+					Icon: "plus",
+					ID:   d.ID + ".volumeAdd",
+					Name: "Volume+",
+					Act: func(ctx context.Context) error {
+						return c.cli.Device().Command(ctx, d.ID, &switchbot.DeviceCommandRequest{
+							Command:     "volumeAdd",
+							Parameter:   "default",
+							CommandType: "command",
+						})
+					},
+				},
+				{
+					Icon: "minus",
+					ID:   d.ID + ".volumeSub",
+					Name: "Volume-",
+					Act: func(ctx context.Context) error {
+						return c.cli.Device().Command(ctx, d.ID, &switchbot.DeviceCommandRequest{
+							Command:     "volumeSub",
+							Parameter:   "default",
+							CommandType: "command",
+						})
+					},
+				},
 			}
 		}
 		if dev, ok := customDevices[d.ID]; ok {
