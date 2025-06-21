@@ -39,7 +39,7 @@ func (c *client) list(ctx context.Context) []Device {
 		log.Printf("%s: [%s] %s\n", d.ID, d.Type, d.Name)
 		var acts []Action
 		switch d.Type {
-		case switchbot.Bot, switchbot.Plug:
+		case switchbot.Bot, switchbot.Plug, switchbot.PlugMiniJP, switchbot.PlugMiniUS:
 			acts = []Action{
 				{
 					Name: "ON",
